@@ -12,6 +12,7 @@ class _PriceScreenState extends State<PriceScreen> {
   @override
   void initState() {
     super.initState();
+    //TODO: Call getData() when the screen loads up.
   }
 
   @override
@@ -51,7 +52,26 @@ class _PriceScreenState extends State<PriceScreen> {
             alignment: Alignment.center,
             padding: EdgeInsets.only(bottom: 30.0),
             color: Colors.lightBlue,
-            child: Container(),
+            child: DropdownButton(
+              items: [
+                DropdownMenuItem(
+                  child: Text('INR'),
+                  value: 'INR',
+                ),
+                DropdownMenuItem(
+                  child: Text('USD'),
+                  value: 'USD',
+                ),
+                DropdownMenuItem(
+                  child: Text('GBP'),
+                  value: 'GBP',
+                ),
+              ],
+              hint: Text('Select currency'),
+              onChanged: (value) {
+                print(value);
+              },
+            ),
           ),
         ],
       ),
